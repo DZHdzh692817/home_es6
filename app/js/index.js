@@ -1,6 +1,6 @@
 //import './class/test';
-import test from "./class/test";
-test();
+//import test from "./class/test";
+//test();
 /*
 class Test{
     constructor(){
@@ -11,3 +11,4 @@ class Test{
 let test = new Test();
 document.body.innerHTML=test.a;
  */
+import 'babel-polyfill';
