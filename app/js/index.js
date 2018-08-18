@@ -12,3 +12,4 @@ let test = new Test();
 document.body.innerHTML=test.a;
  */
 import 'babel-polyfill';
+import Lottery from './lottery';

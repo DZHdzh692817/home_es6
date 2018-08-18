@@ -1,9 +1,10 @@
 class Timer{
-    countdown(end,update,handle){
+    countdown(end,update,handle)
+    {
         const now = new Date().getTime();
         const self = this;
         if(now - end > 0){
-            handle.call(self);
+            handle.call(self);//call()和apply()就是改变函数的执行上下文，也就是this值
         }else{
             let last_time = end - now;
             const px_d = 1000*60*60*24;
@@ -15,16 +16,20 @@ class Timer{
             let m=Math.floor((last_time-d*px_d-h*px_h)/px_m);
             let s=Math.floor((last_time-d*px_d-h*px_h-m*px_m)/px_s);
             let r = [];
-            if(d>0){
-                r.push(`<em>${d}</em>天`);
+            if(d>0)
+            {
+                r.push(`<em>${d}</em>天`);//push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
             }
-            if(r.length || (h > 0)){
+            if(r.length || (h > 0))
+            {
                 r.push(`<em>${h}</em>时`);
             }
-            if(r.length || m > 0){
+            if(r.length || m > 0)
+            {
                 r.push(`<em>${m}</em>分`);
             }
-            if(r.length || s > 0){
+            if(r.length || s > 0)
+            {
                 r.push(`<em>${s}</em>秒`);
             }
             self.last_time = r.join('');
